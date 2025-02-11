@@ -20,14 +20,19 @@ async def root():
     return {"Status": "Works"}
 
 
-@app.get("/generate")
+@app.get("/generate/")
 async def generate():
     return generateButton()
 
 
-@app.post("/generate/submit")
+@app.post("/generate/submit/")
 async def generateSubmit(userDetails: UserDetailsFormat):
     return generateSubmitButton(userDetails)
+
+
+@app.post("/generate/submit/extra-suggestions/")
+async def generateSuggestions(userDetails: ExtraSpecifications):
+    return recommendSuggestionsButton(userDetails)
 
 
 @app.post("/recommend/suggested/")

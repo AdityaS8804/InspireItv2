@@ -30,18 +30,48 @@ def generateSubmitButton(data):
             "summary": "This is the summary",
             "drawbacks": ["defect1", "defect2", "defect3"],
             "opportunities": ["opportunity1", "opportunity2"],
+            "related_works": {
+                1: {
+                    "title": "this is the title",
+                    "summary": "this is the summary of the paper"
+                },
+                2: {
+                    "title": "this is the title",
+                    "summary": "this is the summary of the paper"
+                }
+            }
         },
         2: {
             "title": "This is the paper title",
             "summary": "This is the summary",
             "drawbacks": ["defect1", "defect2", "defect3"],
             "opportunities": ["opportunity1", "opportunity2"],
+            "related_works": {
+                1: {
+                    "title": "this is the title",
+                    "summary": "this is the summary of the paper"
+                },
+                2: {
+                    "title": "this is the title",
+                    "summary": "this is the summary of the paper"
+                }
+            }
         },
         3: {
             "title": "This is the paper title",
             "summary": "This is the summary",
             "drawbacks": ["defect1", "defect2", "defect3"],
             "opportunities": ["opportunity1", "opportunity2"],
+            "related_works": {
+                1: {
+                    "title": "this is the title",
+                    "summary": "this is the summary of the paper"
+                },
+                2: {
+                    "title": "this is the title",
+                    "summary": "this is the summary of the paper"
+                }
+            }
         }
     }
     return sample_data
