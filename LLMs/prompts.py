@@ -9,7 +9,7 @@ class MistralChat:
         self.model = "mistral-large-latest"
         self.client = Mistral(api_key=api)
 
-    def get_idea_prompt(self,data:json);
+    def get_idea_prompt(self,data:json):
         domains = data.domains
         specifications = data.specification
         
