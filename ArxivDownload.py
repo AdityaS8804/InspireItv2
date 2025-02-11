@@ -154,12 +154,12 @@ def get_papers_by_month(start_date: datetime, end_date: datetime,
 
 def main():
     # Example usage
-    start_date = datetime(2022, 1, 1)
-    end_date = datetime(2022, 12, 30)
+    start_date = datetime(2021, 1, 1)
+    end_date = datetime(2021, 12, 30)
     max_papers = 200
     max_fetch_workers = 4
     max_download_workers = 10
-    download_dir = "arxiv_papers"
+    download_dir = "/Volumes/T7/arxiv_papers"
     
     print("Starting paper collection and download...")
     papers = get_papers_by_month(
