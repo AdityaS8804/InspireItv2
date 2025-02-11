@@ -8,6 +8,11 @@ class PaperFormat(BaseModel):
     opportunities: list
 
 
+class UserDetailsFormat(BaseModel):
+    domains: list
+    specifications: str
+
+
 def generateButton():
     sample_data = {
         "fields": [
@@ -18,7 +23,7 @@ def generateButton():
     return sample_data
 
 
-def generateSubmitButton():
+def generateSubmitButton(data):
     sample_data = {
         1: {
             "title": "This is the paper title",
