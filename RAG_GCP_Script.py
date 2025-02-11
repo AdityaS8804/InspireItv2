@@ -21,8 +21,9 @@ access_token = credentials.token
 # Define the Vertex Search endpoint URL and headers
 endpoint_url = (
     "https://discoveryengine.googleapis.com/v1alpha/projects/592141439586/"
-    "locations/global/collections/default_collection/engines/inspireitv2_1739261898335/"
+    "locations/global/collections/default_collection/engines/inspireit-v2-1_1739291064695/"
     "servingConfigs/default_search:search"
+
 )
 headers = {
     "Authorization": f"Bearer {access_token}",
