@@ -17,9 +17,9 @@ async def generate():
     return generateButton()
 
 
-@app.get("/generate/submit")
-async def generateSubmit():
-    return generateSubmitButton()
+@app.post("/generate/submit")
+async def generateSubmit(userDetails: UserDetailsFormat):
+    return generateSubmitButton(userDetails)
 
 
 @app.post("/recommend/suggested/")
