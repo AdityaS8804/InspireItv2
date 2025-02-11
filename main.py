@@ -1,8 +1,4 @@
-<<<<<<< Updated upstream
-from fastapi import FastAPI
-=======
 from fastapi import FastAPI, HTTPException
->>>>>>> Stashed changes
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from GenerateIdeas.generate import *
