@@ -20,16 +20,25 @@ access_token = credentials.token
 
 # Define the Vertex Search endpoint URL and headers
 endpoint_url = (
+
+    #"https://discoveryengine.googleapis.com/v1alpha/projects/592141439586/"
+    #"locations/global/collections/default_collection/engines/inspireit-v2-2_1739294394126/"
+    #"servingConfigs/default_search:search" 
     "https://discoveryengine.googleapis.com/v1alpha/projects/592141439586/"
-    "locations/global/collections/default_collection/engines/inspireit-v2-1_1739291064695/"
-    "servingConfigs/default_search:search"
+    "locations/global/collections/default_collection/engines/inspireit-v2-2_1739294394126/"
+    "servingConfigs/default_search:search" 
+
 
 )
 headers = {
     "Authorization": f"Bearer {access_token}",
     "Content-Type": "application/json"
 }
-
+endpoint_url2=(
+    "https://discoveryengine.googleapis.com/v1alpha/projects/592141439586/"
+    "locations/global/collections/default_collection/engines/inspireit-v2-2_1739294394126/"
+    "servingConfigs/default_search:answer" 
+)
 # Define the JSON payload for your search query
 payload = {
     "query": "Digital attacks",
@@ -38,9 +47,17 @@ payload = {
     "spellCorrectionSpec": {"mode": "AUTO"},
     "contentSearchSpec": {"snippetSpec": {"returnSnippet": True}}
 }
-
+payload2={
+    "query":"NLP and GANs research ideas",
+    "pageSize":10,
+    "queryExpansionSpec":{"condition":"AUTO"},
+    "spellCorrectionSpec":{"mode":"AUTO"},
+    "contentSearchSpec":{"extractiveContentSpec":{"maxExtractiveAnswerCount":1}},
+    "languageCode":"en",
+    "session":"projects/592141439586/locations/global/collections/default_collection/engines/inspireit-v2-2_1739294394126/sessions/-"
+}
 # Make the POST request to the Vertex Search endpoint
-response = requests.post(endpoint_url, headers=headers, json=payload)
+response = requests.post(endpoint_url2, headers=headers, json=payload2)
 
 # Process the response
 if response.ok:
