@@ -9,10 +9,10 @@ class MistralChat:
         self.model = "mistral-large-latest"
         self.client = Mistral(api_key=api)
 
-    def get_idea_prompt(self,data:json):
+    def get_idea_prompt(self, data: json):
         domains = data.domains
         specifications = data.specification
-        
+
         context_str, results = query_cortex_search_service(
             " ".join(domains + [specifications]),
             columns=["chunk", "file_url", "relative_path"],
@@ -21,8 +21,8 @@ class MistralChat:
 
         message = [
             {
-                "role":"user",
-                "content":(f'''
+                "role": "user",
+                "content": (f'''
                 [INST]
                     As an AI research consultant, generate creative research ideas based on the following:
                     
@@ -52,4 +52,3 @@ class MistralChat:
                 ''')
             }
         ]
-    
