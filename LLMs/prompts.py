@@ -143,13 +143,13 @@ class MistralChat:
                     'specifications': specifications})()
         return self.get_idea_prompt(data)
 
-    def suggestion_improvement_idea_prompt(self, data:json):
-
-        title = data.title
-        summary = data.summary
-        drawbacks = data.drawbacks
-        opportunities = data.opportunities
-        specifications = data.specifications
+    def suggestion_improvement_idea_prompt(self, data:dict):
+        
+        title = data["origDetails"]["title"]
+        summary = data["origDetails"]["summary"]
+        drawbacks = data["origDetails"]["drawbacks"]
+        opportunities = data["origDetails"]["opportunities"]
+        specifications = data["specifications"]
 
         payload = {
             "query": f"Title of idea: {title}. Idea summary: \n{summary}. Specifications: \n{specifications}",
