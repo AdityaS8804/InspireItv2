@@ -35,7 +35,9 @@ payload = {
     "pageSize": 10,
     "queryExpansionSpec": {"condition": "AUTO"},
     "spellCorrectionSpec": {"mode": "AUTO"},
-    "contentSearchSpec": {"snippetSpec": {"returnSnippet": True}}
+    "contentSearchSpec": {"snippetSpec": {"returnSnippet": True,
+                                          "maxSnippetLength": 100,
+                                          }}
 }
 
 # Make the POST request to the Vertex Search endpoint
