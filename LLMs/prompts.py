@@ -5,7 +5,6 @@ import requests
 from mistralai import Mistral
 from google.oauth2 import service_account
 import google.auth.transport.requests
-import time
 
 
 class MistralChat:
