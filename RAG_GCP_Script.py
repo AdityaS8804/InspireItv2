@@ -45,7 +45,9 @@ payload = {
     "pageSize": 10,
     "queryExpansionSpec": {"condition": "AUTO"},
     "spellCorrectionSpec": {"mode": "AUTO"},
-    "contentSearchSpec": {"snippetSpec": {"returnSnippet": True}}
+    "contentSearchSpec": {"snippetSpec": {"returnSnippet": True,
+                                          "maxSnippetLength": 100,
+                                          }}
 }
 payload2={
     "query":"NLP and GANs research ideas",
