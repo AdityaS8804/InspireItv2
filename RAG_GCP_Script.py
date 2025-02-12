@@ -46,7 +46,7 @@ payload = {
     "queryExpansionSpec": {"condition": "AUTO"},
     "spellCorrectionSpec": {"mode": "AUTO"},
     "contentSearchSpec": {"snippetSpec": {"returnSnippet": True,
-                                          "maxSnippetLength": 100,
+
                                           }}
 }
 payload2={
