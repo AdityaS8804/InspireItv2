@@ -23,7 +23,7 @@ def generateButton():
     return sample_data
 
 
-def generateSubmitButton(data):
+def generateSubmitButton(data, chat):
     sample_data = {
         1: {
             "title": "This is the paper title",
@@ -74,4 +74,4 @@ def generateSubmitButton(data):
             }
         }
     }
-    return sample_data
+    return chat.generate_ideas(data["domains"], data["specifications"])

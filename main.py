@@ -3,7 +3,8 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from GenerateIdeas.generate import *
 from Recommended.recommend import *
-
+from LLMs.prompts import *
+chat = MistralChat()
 
 app = FastAPI()
 app.add_middleware(
@@ -27,7 +28,7 @@ async def generate():
 
 @app.post("/generate/submit/")
 async def generateSubmit(userDetails: UserDetailsFormat):
-    return generateSubmitButton(userDetails)
+    return generateSubmitButton(dict(userDetails), chat)
 
 
 @app.post("/generate/submit/extra-suggestions/")
