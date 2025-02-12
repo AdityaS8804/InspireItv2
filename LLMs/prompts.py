@@ -24,7 +24,7 @@ class MistralChat:
         access_token = credentials.token
         self.endpoint_url = (
             "https://discoveryengine.googleapis.com/v1alpha/projects/592141439586/"
-            "locations/global/collections/default_collection/engines/inspireit-v2-1_1739291064695/"
+            "locations/global/collections/default_collection/engines/inspireit-v2-2_1739294394126/"
             "servingConfigs/default_search:search"
         )
         self.headers = {
@@ -83,6 +83,10 @@ class MistralChat:
         response = requests.post(
             self.endpoint_url, headers=self.headers, json=payload)
         response_json = response.json()
+
+        print("RESPONSE: \n")
+
+        print(json.dumps(response_json, indent=True))
 
         final_lst = self.get_clean_snippets(response_json)
 
