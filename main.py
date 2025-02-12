@@ -32,8 +32,8 @@ async def generateSubmit(userDetails: UserDetailsFormat):
 
 
 @app.post("/generate/submit/extra-suggestions/")
-async def generateSuggestions(userDetails: ExtraSpecifications):
-    return recommendSuggestionsButton(userDetails)
+async def generateWithSuggestions(userDetails: ExtraSpecifications):
+    return recommendSuggestionsButton(userDetails,chat)
 
 
 @app.post("/recommend/suggested/")
