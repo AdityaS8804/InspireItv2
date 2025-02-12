@@ -186,7 +186,7 @@ class MistralChat:
                         "improved_idea": [
                             {{
                                 "title": "new title to the improved idea",
-                                "description": "explain the improved idea in very detailed around 400 words",
+                                "description": "explain the improved idea in very detailed around 100 words",
                                 "opportunities": ["opp1", "opp2", ...],
                                 "drawbacks": ["drawback1", "drawback2", ...],
                                 "references": ["ref1", "ref2", ...]
@@ -210,8 +210,25 @@ class MistralChat:
                 "error": "Failed to parse response as JSON",
                 "raw_response": response.choices[0].message.content
             }
+        
+    def recommend_ideas(self, data:json):
+        
+        title = data.title
+        summary = data.summary
+        drawbacks = data.drawbacks
+        opportunities = data.opportunities
 
+        payload = {
+            "query": f"Title of idea: {title}. Idea summary: \n{summary}",
+            "pageSize": 10,
+            "queryExpansionSpec": {"condition": "AUTO"},
+            "spellCorrectionSpec": {"mode": "AUTO"},
+            "contentSearchSpec": {"snippetSpec": {"returnSnippet": True}}
+        }
 
+        response = requests.post(
+            self.endpoint_url, headers=self.headers, json=payload)
+        response_json = response.json() 
 # def test_mistral_chat():
 #     # Initialize the MistralChat class
 #     mistral = MistralChat()
@@ -273,9 +290,8 @@ def test_improvement_prompt():
         
         # Clean the response if needed
         if "raw_response" in response:
-            cleaned_response = clean_mistral_response(response["raw_response"])
             print("Cleaned Response:")
-            print(json.dumps(cleaned_response, indent=2))
+            print(json.dumps(response, indent=2))
         else:
             print("Original Response:")
             print(json.dumps(response, indent=2))
