@@ -111,12 +111,14 @@ class MistralChat:
                                 "description": "Very lengthy description",
                                 "opportunities": ["opp1", "opp2", ...],
                                 "drawbacks": ["drawback1", "drawback2", ...],
-                                "references": ["ref1", "ref2", ...]
+                                "references": ["ref1", "ref2", ...],
+                                "summaries":{{title:"ref1",summary:"ref2"}}
                             }}
                         ]
                     }}
 
-                    Generate 3 innovative ideas that combine elements from the specified domains.
+                    Generate 3 innovative ideas that combine elements from the specified domains and also generate summaries of the referenced papers
+                    and put them in the summaries section along with their title.
                 ''')
             }
         ]
@@ -228,76 +230,80 @@ class MistralChat:
 
         response = requests.post(
             self.endpoint_url, headers=self.headers, json=payload)
-        response_json = response.json() 
-# def test_mistral_chat():
-#     # Initialize the MistralChat class
-#     mistral = MistralChat()
-
-#     # Define test domains and specifications
-#     test_domains = [
-#         "Machine Learning",
-#         "Computer Vision",
-#         "Generative AI"
-#     ]
-
-#     test_specifications = "Looking for novel approaches in GAN architectures for image synthesis with focus on medical imaging applications"
-
-#     # Call generate_ideas
-#     try:
-#         ideas = mistral.generate_ideas(
-#             domains=test_domains,
-#             specifications=test_specifications
-#         )
-
-#         # Pretty print the results
-#         print("Generated Ideas:")
-#         print(json.dumps(ideas, indent=2))
-
-#     except Exception as e:
-#         print(f"Error occurred: {str(e)}")
+        response_json = response.json()
 
 
-# # Run the test
-# if __name__ == "__main__":
-#     test_mistral_chat()
 
-def test_improvement_prompt():
+
+def test_mistral_chat():
     # Initialize the MistralChat class
     mistral = MistralChat()
-    
-    # Create test data
-    class TestData:
-        def __init__(self):
-            self.title = "Multi-Scale Hierarchical GANs for Medical Image Synthesis"
-            self.summary = "A novel GAN architecture that leverages multi-scale hierarchical representations to synthesize high-fidelity medical images. The model focuses on different levels of detail during the synthesis process."
-            self.drawbacks = [
-                "Complexity in training multi-scale hierarchical models",
-                "Potential computational overhead",
-                "Challenges in ensuring clinical validity"
-            ]
-            self.opportunities = [
-                "Enhanced image reconstruction quality",
-                "Potential to improve diagnostic accuracy",
-                "Ability to generate diverse realistic images"
-            ]
-            self.specifications = "Improve the architecture by incorporating attention mechanisms and focusing on computational efficiency"
-    
-    test_data = TestData()
-    
-    # Call the improvement prompt
+
+    # Define test domains and specifications
+    test_domains = [
+        "Machine Learning",
+        "Computer Vision",
+        "Generative AI"
+    ]
+
+    test_specifications = "Looking for novel approaches in GAN architectures for image synthesis with focus on medical imaging applications"
+
+    # Call generate_ideas
     try:
-        response = mistral.suggestion_improvement_idea_prompt(test_data)
-        
-        # Clean the response if needed
-        if "raw_response" in response:
-            print("Cleaned Response:")
-            print(json.dumps(response, indent=2))
-        else:
-            print("Original Response:")
-            print(json.dumps(response, indent=2))
-            
+        ideas = mistral.generate_ideas(
+            domains=test_domains,
+            specifications=test_specifications
+        )
+
+        # Pretty print the results
+        print("Generated Ideas:")
+        print(json.dumps(ideas, indent=2))
+
     except Exception as e:
         print(f"Error occurred: {str(e)}")
 
+
+# Run the test
 if __name__ == "__main__":
-    test_improvement_prompt()
+    test_mistral_chat()
+
+# def test_improvement_prompt():
+#     # Initialize the MistralChat class
+#     mistral = MistralChat()
+    
+#     # Create test data
+#     class TestData:
+#         def __init__(self):
+#             self.title = "Multi-Scale Hierarchical GANs for Medical Image Synthesis"
+#             self.summary = "A novel GAN architecture that leverages multi-scale hierarchical representations to synthesize high-fidelity medical images. The model focuses on different levels of detail during the synthesis process."
+#             self.drawbacks = [
+#                 "Complexity in training multi-scale hierarchical models",
+#                 "Potential computational overhead",
+#                 "Challenges in ensuring clinical validity"
+#             ]
+#             self.opportunities = [
+#                 "Enhanced image reconstruction quality",
+#                 "Potential to improve diagnostic accuracy",
+#                 "Ability to generate diverse realistic images"
+#             ]
+#             self.specifications = "Improve the architecture by incorporating attention mechanisms and focusing on computational efficiency"
+    
+#     test_data = TestData()
+    
+#     # Call the improvement prompt
+#     try:
+#         response = mistral.suggestion_improvement_idea_prompt(test_data)
+        
+#         # Clean the response if needed
+#         if "raw_response" in response:
+#             print("Cleaned Response:")
+#             print(json.dumps(response, indent=2))
+#         else:
+#             print("Original Response:")
+#             print(json.dumps(response, indent=2))
+            
+#     except Exception as e:
+#         print(f"Error occurred: {str(e)}")
+
+# if __name__ == "__main__":
+#     test_improvement_prompt()
