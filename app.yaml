@@ -18,7 +18,7 @@ steps:
       - "deploy"
       - "fastapi-app"
       - "--image=gcr.io/$PROJECT_ID/fastapi-app:$COMMIT_SHA"
-      - "--region=asia-south1" # Change as needed
+      - "--region=asia-east1" # Change as needed
       - "--platform=managed"
       - "--allow-unauthenticated" # Remove if authentication is needed
       - "--cpu=4"
