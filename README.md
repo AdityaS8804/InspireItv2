@@ -10,6 +10,7 @@
 
 InspireIt is a distributed research assistance platform created to revolutionize the academic research process. It leverages Google Cloud Platform's Vertex AI and Cloud Storage to provide intelligent research ideation and paper development capabilities.
 
+
 ## 🏗️ System Architecture
 
 ```mermaid
@@ -72,3 +73,11 @@ Have questions, suggestions, bug reports? Reach out through:
 ## 🏆 Sponsors
 
 InspireIt is powered by Google Cloud Platform and deployed on Netlify. We appreciate their infrastructure support in making this project possible.
+
+## 📺 Demo Video  
+Check out our demo on YouTube:  
+🔗 [Watch on YouTube](https://youtu.be/E1OxAEY-fZ8)  
+
+## 🌐 Website  
+Explore more about InspireIt here:  
+🔗 [Visit Our Website](http://35.202.128.28)  
