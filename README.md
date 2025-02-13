@@ -1,7 +1,9 @@
 [![Vercel Deployment](https://img.shields.io/badge/Deployed%20on-Vercel-black.svg)](https://vercel.com)
 [![GCP Powered](https://img.shields.io/badge/Powered%20by-Google%20Cloud-4285F4.svg)](https://cloud.google.com)
 [![RAG Architecture](https://img.shields.io/badge/RAG-Enabled-brightgreen.svg)]()
-[![Mistral](https://img.shields.io/badge/AI-Mistral--large2-blue.svg)]()
+[![Mistral](https://img.shields.io/badge/AI-Mistral--large2-blue.svg)](https://mistral.ai)
+
+<img align="right" width="290" height="290" src="/api/placeholder/290/290">
 
 # InspireIt - an AI-Powered Research Assistant
 
@@ -15,10 +17,13 @@ See InspireIt documentation [link] for getting started, operational details, and
 graph TD
     UI[Web Interface] --> |HTTP| API[API Layer]
     API --> |Request| VAI[Vertex AI]
-    API --> |Storage| GCS[Cloud Storage]
-    VAI --> |ML Models| RAG[RAG System]
+    VAI --> |Storage| GCS[Cloud Storage]
+    GCS --> |Dataset| ARXIV[arXiv Papers]
+    VAI --> |Embeddings| RAG[RAG System]
     RAG --> |Query| ARXIV[arXiv Papers]
-    GCS --> |Retrieve| RAG
+    ARXIV --> |Retrieved Data| RAG
+    RAG --> |Context| LLM[LLM Models]
+    LLM --> |Generated Response| API
     API --> |Response| UI
 ```
 
