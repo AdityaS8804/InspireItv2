@@ -278,37 +278,37 @@ class MistralChat:
                 "raw_response": response.messages[0].content
             }
 
-# def test_mistral_chat():
-#     # Initialize the MistralChat class
-#     mistral = MistralChat()
+def test_mistral_chat():
+    # Initialize the MistralChat class
+    mistral = MistralChat()
 
-#     # Define test domains and specifications
-#     test_domains = [
-#         "Machine Learning",
-#         "Computer Vision",
-#         "Generative AI"
-#     ]
+    # Define test domains and specifications
+    test_domains = [
+        "Machine Learning",
+        "Computer Vision",
+        "Generative AI"
+    ]
 
-#     test_specifications = "Looking for novel approaches in GAN architectures for image synthesis with focus on medical imaging applications"
+    test_specifications = "Looking for novel approaches in GAN architectures for image synthesis with focus on medical imaging applications"
 
-#     # Call generate_ideas
-#     try:
-#         ideas = mistral.generate_ideas(
-#             domains=test_domains,
-#             specifications=test_specifications
-#         )
+    # Call generate_ideas
+    try:
+        ideas = mistral.generate_ideas(
+            domains=test_domains,
+            specifications=test_specifications
+        )
 
-#         # Pretty print the results
-#         print("Generated Ideas:")
-#         print(json.dumps(ideas, indent=2))
+        # Pretty print the results
+        print("Generated Ideas:")
+        print(json.dumps(ideas, indent=2))
 
-#     except Exception as e:
-#         print(f"Error occurred: {str(e)}")
+    except Exception as e:
+        print(f"Error occurred: {str(e)}")
 
 
-# # Run the test
-# if __name__ == "__main__":
-#     test_mistral_chat()
+# Run the test
+if __name__ == "__main__":
+    test_mistral_chat()
 
 # def test_improvement_prompt():
 #     # Initialize the MistralChat class
@@ -351,43 +351,43 @@ class MistralChat:
 # if __name__ == "__main__":
 #     test_improvement_prompt()
 
-def test_recommend_ideas():
-    # Initialize the MistralChat class
-    mistral = MistralChat()
+# def test_recommend_ideas():
+#     # Initialize the MistralChat class
+#     mistral = MistralChat()
     
-    # Create test data
-    class TestData:
-        def __init__(self):
-            self.title = "Transformer-Enhanced GANs for Medical Image Segmentation"
-            self.summary = "A novel approach combining transformer networks with GANs for enhanced medical image segmentation. The model leverages transformer's ability to capture global context while using GANs for generating realistic segmentation masks."
-            self.drawbacks = [
-                "High computational complexity",
-                "Need for large training datasets",
-                "Potential instability in training"
-            ]
-            self.opportunities = [
-                "Improved segmentation accuracy",
-                "Better handling of complex anatomical structures",
-                "Potential for real-time applications"
-            ]
+#     # Create test data
+#     class TestData:
+#         def __init__(self):
+#             self.title = "Transformer-Enhanced GANs for Medical Image Segmentation"
+#             self.summary = "A novel approach combining transformer networks with GANs for enhanced medical image segmentation. The model leverages transformer's ability to capture global context while using GANs for generating realistic segmentation masks."
+#             self.drawbacks = [
+#                 "High computational complexity",
+#                 "Need for large training datasets",
+#                 "Potential instability in training"
+#             ]
+#             self.opportunities = [
+#                 "Improved segmentation accuracy",
+#                 "Better handling of complex anatomical structures",
+#                 "Potential for real-time applications"
+#             ]
     
-    test_data = TestData()
+#     test_data = TestData()
     
-    # Call the recommend ideas method
-    try:
-        response = mistral.recommend_ideas(test_data)
+#     # Call the recommend ideas method
+#     try:
+#         response = mistral.recommend_ideas(test_data)
         
-        # Clean the response if needed
-        if "raw_response" in response:
-            cleaned_response = clean_mistral_response(response["raw_response"])
-            print("Cleaned Response:")
-            print(json.dumps(cleaned_response, indent=2))
-        else:
-            print("Original Response:")
-            print(json.dumps(response, indent=2))
+#         # Clean the response if needed
+#         if "raw_response" in response:
+#             cleaned_response = clean_mistral_response(response["raw_response"])
+#             print("Cleaned Response:")
+#             print(json.dumps(cleaned_response, indent=2))
+#         else:
+#             print("Original Response:")
+#             print(json.dumps(response, indent=2))
             
-    except Exception as e:
-        print(f"Error occurred: {str(e)}")
+#     except Exception as e:
+#         print(f"Error occurred: {str(e)}")
 
-if __name__ == "__main__":
-    test_recommend_ideas()
+# if __name__ == "__main__":
+#     test_recommend_ideas()
