@@ -1,8 +1,10 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
+from Chatbot.chatbot import *
 from GenerateIdeas.generate import *
 from Recommended.recommend import *
+
 from LLMs.prompts import *
 chat = MistralChat()
 
@@ -39,3 +41,6 @@ async def generateWithSuggestions(userDetails: ExtraSpecifications):
 @app.post("/recommend/suggested/")
 async def recommendPaperChosen(paperChosen: PaperFormat):
     return recommendAcceptButton(paperChosen,chat)
+@app.post("/chatbot")
+async def chatbotEndpoint(userchat:UserChat):
+    return chatbotButton(dict(userchat),chat)
