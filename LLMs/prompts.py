@@ -289,7 +289,7 @@ class MistralChat:
         except json.JSONDecodeError:
             return {
                 "error": "Failed to parse response as JSON",
-                "raw_response": response.messages[0].content
+                "raw_response": response.choices[0].message.content
             }
 
     def research_chat(self, user_message: str, context: list = None):
