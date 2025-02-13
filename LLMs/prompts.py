@@ -211,11 +211,11 @@ class MistralChat:
                 "raw_response": response.choices[0].message.content
             }
         
-    def recommend_ideas(self, data: json):
-        title = data.title
-        summary = data.summary
-        drawbacks = data.drawbacks
-        opportunities = data.opportunities
+    def recommend_ideas(self, data: dict):
+        title = data["title"]
+        summary = data["summary"]
+        drawbacks = data["drawbacks"]
+        opportunities = data["opportunities"]
         
         payload = {
             "query": f"Title of idea: {title}. Idea summary: \n{summary}",

@@ -6,14 +6,15 @@ class ExtraSpecifications(BaseModel):
     specifications: str
 
 
-def recommendAcceptButton(data):
+def recommendAcceptButton(data,chat):
     sample_data = {
         "title": "This is the title",
         "Abstract": "This is the abstract",
         "Methodology recommended": "This is the recommended methodology",
         "Existing work": ["this is a list of existing works"]
     }
-    return sample_data
+   
+    return chat.recommend_ideas(data.model_dump())
 
 
 def recommendSuggestionsButton(data,chat):

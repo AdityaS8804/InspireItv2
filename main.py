@@ -38,4 +38,4 @@ async def generateWithSuggestions(userDetails: ExtraSpecifications):
 
 @app.post("/recommend/suggested/")
 async def recommendPaperChosen(paperChosen: PaperFormat):
-    return recommendAcceptButton(paperChosen)
+    return recommendAcceptButton(paperChosen,chat)
