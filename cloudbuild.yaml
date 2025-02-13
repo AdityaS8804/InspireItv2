@@ -1,0 +1,4 @@
+steps:
+  - name: "gcr.io/google.com/cloudsdktool/cloud-sdk"
+    args: ["app", "deploy", "--verbosity=debug"]
+timeout: "1200s"
