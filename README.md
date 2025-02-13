@@ -1,6 +1,5 @@
 [![🚀 Netlify Deployment](https://img.shields.io/badge/Deployed%20on-Netlify-00C7B7.svg)](https://netlify.com)
 [![☁️ GCP Powered](https://img.shields.io/badge/Powered%20by-Google%20Cloud-4285F4.svg)](https://cloud.google.com)
-[![🧠 RAG Architecture](https://img.shields.io/badge/RAG-Enabled-brightgreen.svg)]()
 [![🤖 Mistral](https://img.shields.io/badge/AI-Mistral--large2-blue.svg)](https://mistral.ai)
 
 # 🌟 InspireIt - Bringing Inspirations to Life!
