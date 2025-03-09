@@ -1,10 +1,15 @@
 [![🚀 Netlify Deployment](https://img.shields.io/badge/Deployed%20on-Netlify-00C7B7.svg)](https://netlify.com)
 [![☁️ GCP Powered](https://img.shields.io/badge/Powered%20by-Google%20Cloud-4285F4.svg)](https://cloud.google.com)
 [![🤖 Mistral](https://img.shields.io/badge/AI-Mistral--large2-blue.svg)](https://mistral.ai)
+[![YouTube](https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=YouTube&logoColor=white)](https://youtu.be/E1OxAEY-fZ8)
+[![Website](https://img.shields.io/badge/Website-00A86B?style=for-the-badge&logo=GoogleChrome&logoColor=white)](http://35.202.128.28)
+
+
 
 # 🌟 InspireIt - Bringing Inspirations to Life!
 
 InspireIt is a distributed research assistance platform created to revolutionize the academic research process. It leverages Google Cloud Platform's Vertex AI and Cloud Storage to provide intelligent research ideation and paper development capabilities.
+
 
 ## 🏗️ System Architecture
 
@@ -68,3 +73,11 @@ Have questions, suggestions, bug reports? Reach out through:
 ## 🏆 Sponsors
 
 InspireIt is powered by Google Cloud Platform and deployed on Netlify. We appreciate their infrastructure support in making this project possible.
+
+## 📺 Demo Video  
+Check out our demo on YouTube:  
+🔗 [Watch on YouTube](https://youtu.be/E1OxAEY-fZ8)  
+
+## 🌐 Website  
+Explore more about InspireIt here:  
+🔗 [Visit Our Website](http://35.202.128.28)  
